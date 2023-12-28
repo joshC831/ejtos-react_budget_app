@@ -78,13 +78,13 @@ export const AppReducer = (state, action) => {
 
 // 1. Sets the initial state when the app loads
 const initialState = {
-    budget: 2000,
+    budget: 5000,
     expenses: [
         { id: "Marketing", name: 'Marketing', cost: 50 },
-        { id: "Finance", name: 'Finance', cost: 300 },
-        { id: "Sales", name: 'Sales', cost: 70 },
-        { id: "Human Resource", name: 'Human Resource', cost: 40 },
-        { id: "IT", name: 'IT', cost: 500 },
+        { id: "Finance", name: 'Finance', cost: 90 },
+        { id: "Sales", name: 'Sales', cost: 80 },
+        { id: "Human Resource", name: 'Human Resource', cost: 50 },
+        { id: "IT", name: 'IT', cost: 80 },
     ],
     currency: '£'
 };
@@ -109,11 +109,11 @@ export const AppProvider = (props) => {
     return (
         <AppContext.Provider
             value={{
-                expenses: state.expenses,
-                budget: state.budget,
-                remaining: remaining,
                 dispatch,
-                currency: state.currency
+                expenses: state.expenses,
+                remaining: remaining,
+                currency: state.currency,
+                budget: state.budget
             }}
         >
             {props.children}
